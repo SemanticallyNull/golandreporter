@@ -2,16 +2,28 @@ package golandreporter
 
 import (
 	"fmt"
+	"os"
 	"strings"
 
 	"github.com/onsi/ginkgo/config"
+	"github.com/onsi/ginkgo/reporters"
+	"github.com/onsi/ginkgo/reporters/stenographer"
 	"github.com/onsi/ginkgo/types"
 )
 
 type GolandReporter struct{}
 
-func NewGolandReporter() GolandReporter {
+func NewGolandReporter() reporters.Reporter {
 	return GolandReporter{}
+}
+
+func NewAutoGolandReporter() reporters.Reporter {
+	if strings.Contains(os.Getenv("OLDPWD"), "Goland") {
+		return NewGolandReporter()
+	} else {
+		stenographer := stenographer.New(!config.DefaultReporterConfig.NoColor, config.GinkgoConfig.FlakeAttempts > 1)
+		return reporters.NewDefaultReporter(config.DefaultReporterConfig, stenographer)
+	}
 }
 
 func (g GolandReporter) SpecSuiteWillBegin(config config.GinkgoConfigType, summary *types.SuiteSummary) {
