@@ -15,7 +15,7 @@ In your suite replace `RunSpecs(t, "Integration Suite")` with the following:
 
 ```go
 golandReporter := golandreporter.NewGolandReporter()
-RunSpecsWithCustomReporters(t, "Integration Suite", []Reporter{golangReporter})
+RunSpecsWithCustomReporters(t, "Integration Suite", []Reporter{golandReporter})
 ```
 
 If you want to retain normal Ginkgo formatting when using it from the CLI the
