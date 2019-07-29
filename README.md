@@ -8,6 +8,7 @@ This reporter will trick test2json into outputting the Ginkgo specs similar to
 `go test` output.
 
 ![Ginkgo output in Goland's "Run" window](https://gist.githubusercontent.com/SemanticallyNull/19215f014f3ef0db3c3cd0b46da4d929/raw/18801f7f19a26ea19ba48a1c95d5e068396f7dd7/image1.png)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FSemanticallyNull%2Fgolandreporter.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FSemanticallyNull%2Fgolandreporter?ref=badge_shield)
 
 ## Usage
 
@@ -26,3 +27,7 @@ use it like this:
 RunSpecsWithCustomReporters(t, "Integration Suite", []Reporter{golandreporter.NewAutoGolandReporter})
 ```
 
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FSemanticallyNull%2Fgolandreporter.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FSemanticallyNull%2Fgolandreporter?ref=badge_large)
