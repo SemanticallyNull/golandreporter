@@ -21,7 +21,7 @@ func NewAutoGolandReporter() reporters.Reporter {
 	if strings.Contains(os.Getenv("OLDPWD"), "Goland") {
 		return NewGolandReporter()
 	} else {
-		stenographer := stenographer.New(!config.DefaultReporterConfig.NoColor, config.GinkgoConfig.FlakeAttempts > 1)
+		stenographer := stenographer.New(!config.DefaultReporterConfig.NoColor, config.GinkgoConfig.FlakeAttempts > 1, os.Stdout)
 		return reporters.NewDefaultReporter(config.DefaultReporterConfig, stenographer)
 	}
 }
