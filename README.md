@@ -23,6 +23,6 @@ best option is to use an environment variable in your Run Configuration, and
 use it like this:
 
 ```go
-RunSpecsWithCustomReporters(t, "Integration Suite", []Reporter{golandreporter.NewAutoGolandReporter})
+RunSpecsWithCustomReporters(t, "Integration Suite", []Reporter{golandreporter.NewAutoGolandReporter()})
 ```
 
