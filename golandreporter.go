@@ -18,7 +18,7 @@ func NewGolandReporter() reporters.Reporter {
 }
 
 func NewAutoGolandReporter() reporters.Reporter {
-	if strings.Contains(os.Getenv("OLDPWD"), "Goland") {
+	if strings.Contains(os.Getenv("OLDPWD"), "Goland") || strings.Contains(os.Getenv("XPC_SERVICE_NAME"), "jetbrains") {
 		return NewGolandReporter()
 	} else {
 		stenographer := stenographer.New(!config.DefaultReporterConfig.NoColor, config.GinkgoConfig.FlakeAttempts > 1, os.Stdout)
